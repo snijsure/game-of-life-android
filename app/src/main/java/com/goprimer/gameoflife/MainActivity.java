@@ -42,6 +42,10 @@ public class MainActivity extends Activity {
                 );
                 layoutParams.height = cellSize;
                 layoutParams.width = cellSize;
+                layoutParams.bottomMargin = 1;
+                layoutParams.leftMargin = 1;
+                layoutParams.rightMargin = 1;
+                layoutParams.topMargin = 1;
                 gridLayout.addView(cells[x][y], layoutParams);
             }
         }
