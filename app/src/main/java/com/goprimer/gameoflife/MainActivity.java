@@ -24,6 +24,9 @@ public class MainActivity extends Activity {
         GridLayout gridLayout = (GridLayout) findViewById(R.id.grid_layout);
         gridLayout.setColumnCount(Cell.X_SIZE);
 
+        int padding = (screenWidth % Cell.X_SIZE) / 2;
+        gridLayout.setPadding(padding, padding, padding, padding);
+
         cells = new Cell[Cell.X_SIZE][Cell.Y_SIZE];
         for(int x = 0; x < Cell.X_SIZE; x++) {
             for(int y = 0; y < Cell.Y_SIZE; y++) {
@@ -40,8 +43,8 @@ public class MainActivity extends Activity {
                         GridLayout.spec(y),
                         GridLayout.spec(x)
                 );
-                layoutParams.height = cellSize;
-                layoutParams.width = cellSize;
+                layoutParams.height = cellSize - 2;
+                layoutParams.width = cellSize - 2;
                 layoutParams.bottomMargin = 1;
                 layoutParams.leftMargin = 1;
                 layoutParams.rightMargin = 1;
